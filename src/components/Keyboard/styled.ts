@@ -1,4 +1,8 @@
-import styled from "styled-components";
+import styled, { ThemeProps, DefaultTheme } from "styled-components";
+
+interface ButtonProps extends ThemeProps<DefaultTheme> {
+  isPressed?: boolean;
+}
 
 export const Wrapper = styled.div``;
 
@@ -17,8 +21,8 @@ export const KeyboardRow = styled.div`
 export const KeyboardButton = styled.button`
   border: 2px solid ${({ theme }) => theme.colors.darkGray};
   border-radius: 9px;
-  background: ${({ theme }) => theme.colors.light};
-  box-shadow: 0 5px 5px 0px ${({ theme }) => theme.colors.darkGray};
+  background: ${({ isPressed, theme }: ButtonProps) => isPressed?theme.colors.accent:theme.colors.light};
+  box-shadow: ${({ isPressed, theme }) => isPressed? ('0 2px 5px 0px' + theme.colors.darkGray):('0 5px 5px 0px' + theme.colors.darkGray)} ;
   flex: 1;
   width: 100px;
   height: 100px;
