@@ -1,6 +1,6 @@
 export interface t9ReducerTypes {
-  numbersPressed: string;
-  receivedWords: string;
+  numbersPressed: number[];
+  receivedWords: string[];
   error: boolean;
   loading: boolean;
 }

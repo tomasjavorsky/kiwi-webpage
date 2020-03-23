@@ -10,7 +10,7 @@ export const getRecipes = (numbersPressed: string) => ({
   payload: numbersPressed,
 });
 
-export const setNumberPressed = (numberPressed: string) => ({
+export const setNumberPressed = (numberPressed: number) => ({
   type: T9Actions.SET_NUMBER_PRESSED,
   payload: numberPressed,
 });
