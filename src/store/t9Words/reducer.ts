@@ -1,7 +1,8 @@
 import { T9Actions } from "./actions";
-import { t9Reducer } from "../@types";
+import { t9ReducerTypes } from "../@types";
 
-const initialState: t9Reducer = {
+const initialState: t9ReducerTypes = {
+  numbersPressed: undefined,
   receivedWords: undefined,
   error: false,
   loading: false,

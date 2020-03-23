@@ -2,6 +2,7 @@ import styled, { ThemeProps, DefaultTheme } from "styled-components";
 
 interface ButtonProps extends ThemeProps<DefaultTheme> {
   isPressed?: boolean;
+  onClick?: (e)=>void;
 }
 
 export const Wrapper = styled.div``;

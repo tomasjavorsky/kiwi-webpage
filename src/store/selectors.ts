@@ -1,7 +1,8 @@
 import ReduxTypes from "./@types";
 
-export const selectRecipes = (state: ReduxTypes) =>
+export const selectReceivedWords = (state: ReduxTypes) =>
   state.t9Reducer.receivedWords;
-export const selectRecipesError = (state: ReduxTypes) => state.t9Reducer.error;
-export const selectRecipesLoading = (state: ReduxTypes) =>
-  state.t9Reducer.loading;
+export const selectError = (state: ReduxTypes) => state.t9Reducer.error;
+export const selectLoading = (state: ReduxTypes) => state.t9Reducer.loading;
+export const selectNumbersPressed = (state: ReduxTypes) =>
+  state.t9Reducer.numbersPressed;
