@@ -9,10 +9,10 @@ const theme = {
   },
   colors: {
     primary: "#000000",
-    accent: "#0000FF",
-    accentLight: "#FF00FF",
-    light: "#FFFFFF",
-    dark: "#000000",
+    accent: "#efffc2",
+    light: "#ffffff",
+    gray: "#efefef",
+    darkGray: "#bbb",
   },
 };
 
