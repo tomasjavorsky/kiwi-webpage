@@ -25,8 +25,8 @@ export const KeyboardButton = styled.button`
   background: ${({ isPressed, theme }: ButtonProps) => isPressed?theme.colors.accent:theme.colors.light};
   box-shadow: ${({ isPressed, theme }) => isPressed? ('0 2px 5px 0px' + theme.colors.darkGray):('0 5px 5px 0px' + theme.colors.darkGray)} ;
   flex: 1;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   margin: 10px;
   :active {
     background-color: ${({ theme }) => theme.colors.accent};
@@ -45,10 +45,10 @@ export const ButtonContent = styled.div`
 
 export const ButtonNumber = styled.p`
   margin: 2px;
-  font-size: 30px;
+  font-size: 25px;
 `;
 
 export const ButtonLetters = styled.p`
   margin: 2px;
-  font-size: 15px;
+  font-size: 10px;
 `;

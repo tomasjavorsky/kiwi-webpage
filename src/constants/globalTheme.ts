@@ -11,8 +11,10 @@ const theme = {
     primary: "#000000",
     accent: "#efffc2",
     light: "#ffffff",
+    dark: "#999",
     gray: "#efefef",
     darkGray: "#bbb",
+    lcdBG: "#eaf7e6",
   },
 };
 

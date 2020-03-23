@@ -86,7 +86,7 @@ const Keyboard = ({ setNumberPressed }: Props) => {
     <Wrapper>
       <KeyboardContainer>
         <KeyboardRow>
-          <KeyboardButton>
+          <KeyboardButton isPressed={onePressed}>
             <ButtonContent>
               <ButtonNumber>1</ButtonNumber>
               <ButtonLetters>‎ ‎</ButtonLetters>
