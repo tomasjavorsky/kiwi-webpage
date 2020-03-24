@@ -1,18 +1,65 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Wrapper, DisplayContainer, DisplayScreen } from "./styled";
+import ReduxTypes from "../../store/@types";
+import {
+  selectError,
+  selectReceivedWords,
+  selectLoading,
+  selectNumbersPressed
+} from "../../store/selectors";
+import { connect } from "react-redux";
+import { getWords } from "../../store/t9Words/actions";
 
-interface Props {
-    
+interface StateProps {
+  numbersPressed: number[];
+  receivedWords: string[];
+  loading: boolean;
+  error: boolean;
 }
 
-const Display = ({}: Props) => {
+interface DispatchProps {
+  getWords: typeof getWords;
+}
+
+interface Props extends StateProps, DispatchProps {}
+
+const Display = ({
+  getWords,
+  numbersPressed,
+  receivedWords,
+  loading,
+  error
+}: Props) => {
+  useEffect(() => {
+    if (numbersPressed) {
+      console.log(numbersPressed);
+      getWords(numbersPressed);
+    }
+  }, [numbersPressed]);
+
   return (
     <Wrapper>
       <DisplayContainer>
-        <DisplayScreen>ab bc cd ef gh ij kl mn</DisplayScreen>
+        <DisplayScreen>
+          {error && "Error, please try again."}
+          {loading && "Loading..."}
+          {!loading &&
+            !error &&
+            receivedWords &&
+            receivedWords?.map(word => `${word} `)}
+        </DisplayScreen>
       </DisplayContainer>
     </Wrapper>
   );
 };
 
-export default Display;
+const mapStateToProps = (state: ReduxTypes) => {
+  return {
+    numbersPressed: selectNumbersPressed(state),
+    receivedWords: selectReceivedWords(state),
+    loading: selectLoading(state),
+    error: selectError(state)
+  };
+};
+
+export default connect(mapStateToProps, { getWords })(Display);

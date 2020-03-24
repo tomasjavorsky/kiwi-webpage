@@ -4,16 +4,15 @@ import { endpoint } from "../../constants";
 
 function* getT9WordsAsync(action) {
   try {
-    const words = yield fetch(
-      `${endpoint}/?numbersPressed=${action.payload}`,
-      {}
-    ).then((res) => res.json());
+    const numbers = yield action.payload.join("");
+    const words = yield fetch(`${endpoint}/?pressed_numbers=${numbers}`)
+      .then(res => res.json())
+    console.log(words)
     yield put({
       type: T9Actions.GET_T9_WORDS_SUCCESS,
-      payload: words,
+      payload: words
     });
   } catch (err) {
-    console.error(err);
     yield put({ type: T9Actions.GET_T9_WORDS_FAILURE });
   }
 }

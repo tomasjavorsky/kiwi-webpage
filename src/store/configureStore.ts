@@ -1,6 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
-import t9ReducerTypes from "./t9Words/reducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import rootSaga from "./rootSaga";
 import t9Reducer from "./t9Words/reducer"

@@ -5,7 +5,7 @@ export enum T9Actions {
   SET_NUMBER_PRESSED = "t9Words/SET_NUMBER_PRESSED",
 }
 
-export const getRecipes = (numbersPressed: string) => ({
+export const getWords = (numbersPressed: number[]) => ({
   type: T9Actions.GET_T9_WORDS,
   payload: numbersPressed,
 });

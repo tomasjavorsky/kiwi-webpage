@@ -21,4 +21,5 @@ export const DisplayScreen = styled.div`
   border-radius: 9px;
   box-shadow: 0 0 5px 0px ${({ theme }) => theme.colors.dark} inset;
   padding: 5px;
+  font-family: 'Inconsolata', monospace;
 `;
