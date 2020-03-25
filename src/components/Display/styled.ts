@@ -36,6 +36,7 @@ export const DisplayScreen = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: ${({ theme }) => theme.colors.gray};
   border-radius: 9px;
   box-shadow: 0 5px 10px 0px ${({ theme }) => theme.colors.darkGray};
