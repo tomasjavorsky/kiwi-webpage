@@ -61,7 +61,7 @@ const Display = ({
   return (
     <Wrapper>
       <DisplayContainer>
-        <DisplayScreen>
+        <DisplayScreen data-testid='display screen'>
           {error && "Error, please try again."}
           {loading && "Loading..."}
           {!loading &&
@@ -71,11 +71,11 @@ const Display = ({
         </DisplayScreen>
       </DisplayContainer>
       <ButtonContainer>
-        <OffsetButton isPressed={false} onClick={() => changeOffset(false)}>
+        <OffsetButton data-testid='offset button 1' isPressed={false} onClick={() => changeOffset(false)}>
           {"<"}
         </OffsetButton>
         <div>{`${offset} - ${receivedWords.length + offset}`}</div>
-        <OffsetButton isPressed={false} onClick={() => changeOffset(true)}>
+        <OffsetButton data-testid='offset button 2' isPressed={false} onClick={() => changeOffset(true)}>
           {">"}
         </OffsetButton>
       </ButtonContainer>

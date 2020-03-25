@@ -3,10 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
     "@types/node": "^12.12.30",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
@@ -27,7 +24,7 @@
     "start": "react-scripts start",
     "prettier:fix": "prettier --write \"src/**/*.ts*\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --no-cache",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -46,6 +43,21 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^2.0.1"
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-proposal-export-namespace-from": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/jest": "^24.9.1",
+    "babel-jest": "^25.1.0",
+    "jest-transform-stub": "^2.0.0",
+    "prettier": "^2.0.1",
+    "react-hot-loader": "^4.12.20",
+    "ts-jest": "^25.2.1"
   }
 }
