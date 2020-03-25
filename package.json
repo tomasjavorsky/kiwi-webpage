@@ -54,7 +54,6 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/react-hooks": "^3.2.1",
     "@types/jest": "^24.9.1",
-    "babel-jest": "^25.1.0",
     "jest-transform-stub": "^2.0.0",
     "prettier": "^2.0.1",
     "react-hot-loader": "^4.12.20",

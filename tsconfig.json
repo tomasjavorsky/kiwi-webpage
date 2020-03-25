@@ -5,7 +5,7 @@
     "target": "es5",
     "rootDir": "src",
     "noImplicitReturns": true,
-    "incremental": true,
+    "incremental": false,
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -24,7 +24,7 @@
     ],
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "noEmit": true
   },
   "types": [
