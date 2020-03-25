@@ -13,11 +13,13 @@ const t9Reducer = (state = initialState, action) => {
 
     case T9Actions.SET_NUMBER_PRESSED: 
       return {...state, numbersPressed: [...state.numbersPressed, action.payload]}
+    case T9Actions.CLEAR_NUMBER_PRESSED:
+      return {...state, numbersPressed: []}
 
     case T9Actions.GET_T9_WORDS:
       return { ...state, loading: true, error: false };
     case T9Actions.GET_T9_WORDS_SUCCESS:
-      return { ...state, receivedWords: [action.payload], loading: false };
+      return { ...state, receivedWords: action.payload, loading: false };
     case T9Actions.GET_T9_WORDS_FAILURE:
       return { ...state, loading: false, error: true };
 

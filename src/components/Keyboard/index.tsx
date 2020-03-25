@@ -9,16 +9,17 @@ import {
   ButtonLetters
 } from "./styled";
 import useKeyPress from "../../hooks/useKeyPress";
-import { setNumberPressed } from "../../store/t9Words/actions";
+import { setNumberPressed, clearNumberPressed } from "../../store/t9Words/actions";
 import { connect } from "react-redux";
 
 interface DispatchProps {
-  setNumberPressed: typeof setNumberPressed;
+  setNumberPressed: typeof setNumberPressed
+  clearNumberPressed: typeof clearNumberPressed
 }
 
 interface Props extends DispatchProps {}
 
-const Keyboard = ({ setNumberPressed }: Props) => {
+const Keyboard = ({ setNumberPressed, clearNumberPressed }: Props) => {
 
   const onePressed = useKeyPress("1");
   const twoPressed = useKeyPress("2");
@@ -152,7 +153,7 @@ const Keyboard = ({ setNumberPressed }: Props) => {
               <ButtonLetters> ‎</ButtonLetters>
             </ButtonContent>
           </KeyboardButton>
-          <KeyboardButton isPressed={zeroPressed}>
+          <KeyboardButton isPressed={zeroPressed} onClick={()=>clearNumberPressed()}>
             <ButtonContent>
               <ButtonNumber>0</ButtonNumber>
               <ButtonLetters> ‎</ButtonLetters>
@@ -170,4 +171,4 @@ const Keyboard = ({ setNumberPressed }: Props) => {
   );
 };
 
-export default connect(null, { setNumberPressed })(Keyboard);
+export default connect(null, { setNumberPressed, clearNumberPressed })(Keyboard);

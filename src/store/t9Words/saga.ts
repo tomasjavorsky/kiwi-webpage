@@ -4,10 +4,8 @@ import { endpoint } from "../../constants";
 
 function* getT9WordsAsync(action) {
   try {
-    const numbers = yield action.payload.join("");
-    const words = yield fetch(`${endpoint}/?pressed_numbers=${numbers}`)
+    const words = yield fetch(`${endpoint}/?pressed_numbers=${action.payload.numbers.join("")}&offset=${action.payload.offset}`)
       .then(res => res.json())
-    console.log(words)
     yield put({
       type: T9Actions.GET_T9_WORDS_SUCCESS,
       payload: words
